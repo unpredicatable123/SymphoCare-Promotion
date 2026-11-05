@@ -29,9 +29,13 @@ npm run preview    # serve the production build
 
 ## Deploy
 
-The site is fully prerendered (`@sveltejs/adapter-static`). Upload `build/` to any static host
-(Vercel, Netlify, Cloudflare Pages, S3, Hostinger…). Pages are emitted as `platform.html` etc.;
-most hosts serve them at `/platform` automatically. `404.html` is the fallback page.
+The site is fully prerendered (`@sveltejs/adapter-static`) into `build/`.
+
+- **Vercel:** import the repo and deploy. `vercel.json` sets the output directory to `build`
+  and enables clean URLs (`/platform` → `platform.html`). Leave the Output Directory setting
+  in the Vercel dashboard empty, so `vercel.json` controls it.
+- **Other static hosts** (Netlify, Cloudflare Pages, S3, Hostinger…): publish `build/`.
+  Pages are emitted as `platform.html` etc.; `404.html` is the not-found page.
 
 ## Contact form
 
