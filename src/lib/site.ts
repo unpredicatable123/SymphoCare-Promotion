@@ -15,6 +15,7 @@ export const site = {
 export const nav = [
 	{ href: '/', label: 'Home' },
 	{ href: '/platform', label: 'Platform' },
+	{ href: '/aura', label: 'AURA' },
 	{ href: '/smart-files', label: 'Smart Files AI' },
 	{ href: '/solutions', label: 'Solutions' },
 	{ href: '/security', label: 'Security' },

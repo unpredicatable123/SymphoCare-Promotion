@@ -33,8 +33,8 @@
 		{
 			id: 'queue',
 			label: 'Waiting room',
-			title: 'Queue management and waiting-room TV',
-			text: 'Turn a crowded waiting room into a calm, visible queue — for the reception desk, the doctor’s assistant and the patients waiting.',
+			title: 'PACE — queue management and waiting-room TV',
+			text: 'PACE, the Patient Arrival and Coordination Engine, turns a crowded waiting room into a calm, visible queue for the reception desk, the doctor’s assistant and the patients waiting.',
 			points: [
 				'Check-in for appointments and walk-ins with per-doctor token numbers (e.g. A-014)',
 				'Cabins mapped to doctors for each session',
@@ -58,6 +58,22 @@
 				'Completed consultations are locked — the clinical record cannot be silently changed'
 			],
 			visual: { tag: 'Visit pad', title: 'Consultation', lines: [['Vitals', 'Recorded'], ['Allergies', '1 on file'], ['Status', 'Completed']] }
+		},
+		{
+			id: 'aura',
+			label: 'AI assisted',
+			title: 'AURA ambient listening',
+			text: 'AURA, the Ambient Understanding and Recognition Assistant, listens to the consultation and drafts the notes, so the doctor can focus on the patient.',
+			points: [
+				'Recording starts from the consultation screen, only after the patient’s consent is confirmed',
+				'Built for Tamil, English and the mix of both',
+				'Separates the doctor’s voice from the patient’s',
+				'Drafts complaint, history, examination, diagnosis and follow-up beside the consultation form',
+				'Only reorganises what was said, never adds diagnoses or treatment ideas',
+				'The doctor accepts or edits every field; audio and transcripts stay private to the recording doctor'
+			],
+			visual: { tag: 'AURA draft', title: 'Ambient notes', lines: [['Language', 'Tamil–English'], ['Speakers', '2'], ['Review', '5 fields']] },
+			link: { href: '/aura', text: 'Meet AURA' }
 		},
 		{
 			id: 'prescriptions',
@@ -189,7 +205,8 @@
 
 	const short: Record<string, string> = {
 		'front-desk': 'Appointments',
-		queue: 'Queue & TV display',
+		queue: 'PACE queue',
+		aura: 'AURA',
 		consultations: 'Consultations',
 		prescriptions: 'E-prescriptions',
 		laboratory: 'Laboratory',
@@ -205,19 +222,18 @@
 	const roadmap = [
 		{ title: 'WhatsApp updates', text: 'Appointment confirmations, reminders and lab-ready notices — with patient consent and quiet hours.' },
 		{ title: 'ABDM health exchange', text: 'SymphoCare is built on an ABDM-ready architecture, with ABHA linking and consent-based record sharing on the roadmap.' },
-		{ title: 'AI scribe', text: 'Ambient listening that turns a Tamil–English consultation into a draft note for the doctor to review.' },
-		{ title: 'Smarter waiting rooms', text: 'Voice announcements and estimated waiting times on the queue display.' }
+		{ title: 'PACE, phase two', text: 'Spoken token announcements, WhatsApp token updates and estimated waiting times.' }
 	];
 </script>
 
 <Seo
 	title="Platform"
-	description="Every SymphoCare module: patient registry, appointments, queue and waiting-room TV, consultations and specialty EMR, e-prescriptions, laboratory, pharmacy, billing, MIS, Smart Files AI and the patient portal."
+	description="Every SymphoCare module: patient registry, appointments, PACE queue and waiting-room TV, consultations, AURA ambient listening, specialty EMR, e-prescriptions, laboratory, pharmacy, billing, MIS, Smart Files AI and the patient portal."
 />
 
 <PageHero
 	eyebrow="The platform"
-	sub="Twelve connected capabilities, one shared patient record. Here is everything SymphoCare brings to your clinic today."
+	sub="Thirteen connected capabilities, one shared patient record. Here is everything SymphoCare brings to your clinic today."
 >
 	{#snippet heading()}Everything a clinic day needs. <em>Nothing it doesn’t.</em>{/snippet}
 	<nav class="jump" aria-label="Jump to a capability">
@@ -386,7 +402,7 @@
 	}
 	.roadmap {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 1px;
 		background: #ffffff35;
 	}

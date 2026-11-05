@@ -15,6 +15,8 @@
 
 	const interestOptions = [
 		{ key: 'pricing', label: 'Pricing & proposal' },
+		{ key: 'aura', label: 'AURA ambient listening' },
+		{ key: 'pace', label: 'PACE queue management' },
 		{ key: 'laboratory', label: 'Laboratory workbench' },
 		{ key: 'pharmacy', label: 'Pharmacy and inventory' },
 		{ key: 'smart-files', label: 'Smart Files AI' },

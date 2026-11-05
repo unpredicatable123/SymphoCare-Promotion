@@ -12,7 +12,7 @@
 		Pill,
 		Receipt,
 		ChartColumn,
-		ScanText
+		AudioLines
 	} from '@lucide/svelte';
 
 	// --- Hero queue board: gently "calls" the next token so the mock feels alive ---
@@ -49,8 +49,8 @@
 		{
 			icon: Ticket,
 			label: 'Front desk',
-			title: 'Queue and waiting-room TV',
-			text: 'Check-in, per-doctor tokens and cabins, a queue console to call, recall or skip, and a live waiting-room display that never shows patient names.'
+			title: 'PACE queue and waiting-room TV',
+			text: 'PACE, the Patient Arrival and Coordination Engine, runs check-in, per-doctor tokens and cabins, a console to call, recall or skip, and a live waiting-room display.'
 		},
 		{
 			icon: Stethoscope,
@@ -83,10 +83,10 @@
 			text: 'A clinic dashboard for today, this week or any range, with operational, financial and pharmacy reports — exportable to CSV for your accountant.'
 		},
 		{
-			icon: ScanText,
+			icon: AudioLines,
 			label: 'AI assisted',
-			title: 'Smart Files AI',
-			text: 'Upload a lab report or discharge summary and let AI read, classify and extract key values for review. Compare reports over time to see trends.'
+			title: 'AURA ambient listening',
+			text: 'AURA listens to Tamil–English consultations, with consent, and drafts complaint, history, examination, diagnosis and follow-up for the doctor to review.'
 		}
 	];
 
@@ -127,7 +127,7 @@
 		},
 		{
 			q: 'Is the AI making clinical decisions?',
-			a: 'No. Smart Files AI is assistive: it reads, classifies and suggests extracted values from documents, and a person accepts, edits or rejects each suggestion. Nothing is written to the medical record on its own.'
+			a: 'No. AURA drafts consultation notes only from what was said in the room, and Smart Files AI suggests values extracted from documents. In both cases a person accepts or edits every suggestion, and nothing is written to the medical record on its own.'
 		},
 		{
 			q: 'Where are you based?',
@@ -161,7 +161,7 @@
 		<div class="hero-visual" aria-label="Illustration of the SymphoCare waiting-room display" role="img">
 			<div class="board">
 				<div class="board-top">
-					<span class="live"><i></i> Live queue</span>
+					<span class="live"><i></i> PACE · Live queue</span>
 					<span>Now serving</span>
 				</div>
 				{#each tokens as row, i (row.cabin)}
@@ -254,7 +254,7 @@
 					<p class="card-label">{c.label}</p>
 					<h3>{c.title}</h3>
 					<p>{c.text}</p>
-					<a href={c.label === 'AI assisted' ? '/smart-files' : '/platform'}>See capability <span>→</span></a>
+					<a href={c.label === 'AI assisted' ? '/aura' : '/platform'}>See capability <span>→</span></a>
 				</article>
 			{/each}
 		</div>
@@ -285,6 +285,37 @@
 					<p>“{p.line}”</p>
 				</div>
 			{/each}
+		</div>
+	</div>
+</section>
+
+<!-- AURA -->
+<section class="section aura-section">
+	<div class="shell aura-layout">
+		<div {@attach reveal()}>
+			<p class="eyebrow">Meet AURA · Ambient Understanding and Recognition Assistant</p>
+			<h2>Look at the patient.<br />Let AURA take the notes.</h2>
+			<p class="lead">
+				AURA listens to the consultation, in Tamil, English or both, and drafts the notes so the
+				doctor can stay focused on the person in front of them.
+			</p>
+			<ul class="check-list">
+				<li>Recording starts only after the patient’s consent is confirmed</li>
+				<li>Recognises the doctor’s and the patient’s voices</li>
+				<li>Drafts complaint, history, examination, diagnosis and follow-up</li>
+				<li>The doctor accepts or edits every field; nothing saves on its own</li>
+			</ul>
+			<a class="button button-primary aura-cta" href="/aura">Meet AURA <span>→</span></a>
+		</div>
+		<div class="aura-card" {@attach reveal(120)} aria-hidden="true">
+			<div class="aura-top"><span class="rec-dot"></span> Recording · consent confirmed</div>
+			<p class="bubble b-doc"><small>Doctor</small>Sollunga, enna problem?</p>
+			<p class="bubble b-pat"><small>Patient</small>Three days-aa fever, night-la cough jaasthi.</p>
+			<div class="aura-draft">
+				<span>AURA draft</span>
+				<div><small>Complaint</small><b>Fever × 3 days; night-time cough</b></div>
+				<div><small>Follow-up</small><b>Review after 5 days</b></div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -332,8 +363,8 @@
 			<a class="text-link" href="/platform">See how the platform connects →</a>
 		</div>
 		<div class="loop-grid line-grid">
-			<div {@attach reveal(0)}><span>01</span><h3>Register</h3><p>Patient registry, appointments, shifts, check-in, tokens and the waiting-room display.</p></div>
-			<div {@attach reveal(80)}><span>02</span><h3>Consult</h3><p>Visit pad, vitals, allergies, specialty case forms and signed e-prescriptions.</p></div>
+			<div {@attach reveal(0)}><span>01</span><h3>Register</h3><p>Patient registry, appointments, shifts, and PACE check-in, tokens and waiting-room display.</p></div>
+			<div {@attach reveal(80)}><span>02</span><h3>Consult</h3><p>Visit pad, AURA ambient notes, vitals, allergies, specialty case forms and signed e-prescriptions.</p></div>
 			<div {@attach reveal(160)}><span>03</span><h3>Care</h3><p>Investigations, laboratory workflows, dispensing, stock and the patient portal.</p></div>
 			<div {@attach reveal(240)}><span>04</span><h3>Understand</h3><p>Billing, collections, MIS dashboards, reports and an append-only audit trail.</p></div>
 		</div>
@@ -386,11 +417,16 @@
 			</article>
 			<article {@attach reveal(80)}>
 				<span>02</span>
+				<div><h3>AURA ambient listening</h3><p>Consent-first ambient notes for busy OPDs, drafted from Tamil–English consultations and reviewed by the doctor.</p></div>
+				<a href="/aura" aria-label="Learn about AURA">→</a>
+			</article>
+			<article {@attach reveal(120)}>
+				<span>03</span>
 				<div><h3>Smart Files AI</h3><p>Document classification, field extraction and AI report comparison for clinics that handle a lot of outside paperwork.</p></div>
 				<a href="/smart-files" aria-label="Learn about Smart Files AI">→</a>
 			</article>
 			<article {@attach reveal(160)}>
-				<span>03</span>
+				<span>04</span>
 				<div><h3>Laboratory workbench</h3><p>Sample tracking, worklists, result verification and numbered reports for in-house labs and diagnostic centres.</p></div>
 				<a href="/platform#laboratory" aria-label="Learn about the laboratory workbench">→</a>
 			</article>
@@ -719,6 +755,101 @@
 		font-size: 14px;
 	}
 
+	/* ---------- AURA ---------- */
+	.aura-layout {
+		display: grid;
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 80px;
+		align-items: center;
+	}
+	.aura-layout .lead {
+		margin-top: 22px;
+	}
+	.aura-cta {
+		margin-top: 30px;
+	}
+	.aura-card {
+		background: var(--forest-900);
+		border-radius: 18px;
+		padding: 24px;
+		box-shadow: 0 28px 60px #0d2d2033;
+		display: grid;
+		gap: 10px;
+	}
+	.aura-top {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		color: #a9ce9a;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		margin-bottom: 6px;
+	}
+	.rec-dot {
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		background: #e5675a;
+		animation: pulse 1.4s ease-in-out infinite;
+	}
+	.bubble {
+		max-width: 86%;
+		padding: 10px 14px;
+		border-radius: 10px;
+		font-size: 14px;
+	}
+	.bubble small {
+		display: block;
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+	.bubble.b-doc {
+		background: #ffffff10;
+		color: #e1eee2;
+	}
+	.bubble.b-doc small {
+		color: #a9ce9a;
+	}
+	.bubble.b-pat {
+		justify-self: end;
+		background: #f0c45c1f;
+		color: #f8f1dc;
+	}
+	.bubble.b-pat small {
+		color: var(--sun);
+	}
+	.aura-draft {
+		margin-top: 8px;
+		background: var(--cream);
+		border-radius: 10px;
+		padding: 16px;
+		display: grid;
+		gap: 8px;
+	}
+	.aura-draft > span {
+		font-size: 12px;
+		font-weight: 700;
+		color: var(--forest-800);
+	}
+	.aura-draft div {
+		display: grid;
+	}
+	.aura-draft small {
+		color: var(--green-700);
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+	.aura-draft b {
+		font-size: 14px;
+		font-weight: 500;
+	}
+
 	/* ---------- AI ---------- */
 	.ai-layout {
 		display: grid;
@@ -982,6 +1113,7 @@
 		}
 		.hero-layout,
 		.portals-layout,
+		.aura-layout,
 		.ai-layout,
 		.loop-layout {
 			grid-template-columns: 1fr;

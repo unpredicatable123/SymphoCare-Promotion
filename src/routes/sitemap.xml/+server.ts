@@ -2,7 +2,7 @@ import { site } from '#lib/site.ts';
 
 export const prerender = true;
 
-const pages = ['/', '/platform', '/smart-files', '/solutions', '/security', '/licensing', '/about', '/contact'];
+const pages = ['/', '/platform', '/aura', '/smart-files', '/solutions', '/security', '/licensing', '/about', '/contact'];
 
 export function GET() {
 	const urls = pages

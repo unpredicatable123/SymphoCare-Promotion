@@ -224,6 +224,7 @@
 				<li>Unverifiable values flagged, never guessed</li>
 				<li>Export the comparison as a PDF</li>
 			</ul>
+			<a class="text-link" href="/aura">Taking notes during consultations? Meet AURA →</a>
 		</div>
 		<figure class="trend-card" {@attach reveal(120)}>
 			<figcaption><span>HbA1c · 3 reports</span><b>Improving</b></figcaption>

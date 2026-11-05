@@ -11,19 +11,19 @@
 			icon: UserRound,
 			title: 'Solo practitioners',
 			text: 'Everything you need to run your practice from one calm workspace — with a small team or none at all.',
-			points: ['Appointments and walk-in tokens', 'Visit pad and signed e-prescriptions', 'Consultation-fee billing with UPI', 'Patient portal for reports and prescriptions']
+			points: ['Appointments and PACE walk-in tokens', 'AURA ambient notes and signed e-prescriptions', 'Consultation-fee billing with UPI', 'Patient portal for reports and prescriptions']
 		},
 		{
 			icon: Users,
 			title: 'Multi-doctor clinics',
 			text: 'Give every doctor a cabin, a queue and a schedule — while the front desk sees the whole clinic day.',
-			points: ['Doctor shifts with patient caps', 'Cabin mapping and per-doctor tokens', 'Waiting-room TV for up to 6 cabins per screen', 'Role-based access for each team member']
+			points: ['Doctor shifts with patient caps', 'PACE cabins and per-doctor tokens', 'Waiting-room TV for up to 6 cabins per screen', 'Role-based access for each team member']
 		},
 		{
 			icon: Network,
 			title: 'Medical coworking spaces',
 			text: 'Independent doctors share one front desk, one waiting room and one display — each with their own shifts and patients.',
-			points: ['Shared reception, separate doctor schedules', 'Per-doctor queues on one shared TV', 'Doctor-set consultation fees', 'Clinic-wide MIS for the space operator']
+			points: ['Shared reception, separate doctor schedules', 'Per-doctor PACE queues on one shared TV', 'Doctor-set consultation fees', 'Clinic-wide MIS for the space operator']
 		},
 		{
 			icon: Building2,
@@ -60,7 +60,7 @@
 	const roles = [
 		{ name: 'Owner', text: 'Everything a Clinic Admin can do, plus organisation-level management.' },
 		{ name: 'Clinic Admin', text: 'Team, settings, catalogues, billing oversight and reports.' },
-		{ name: 'Doctor', text: 'Consults, prescribes, orders investigations, calls the queue and reviews results.' },
+		{ name: 'Doctor', text: 'Consults with AURA by their side, prescribes, orders investigations, calls the queue and reviews results.' },
 		{ name: 'Nurse / Clinical Assistant', text: 'Records vitals and supports the queue — assignable to specific doctors.' },
 		{ name: 'Receptionist', text: 'Registers patients, books appointments, runs the queue and front-desk billing.' },
 		{ name: 'Cashier / Billing', text: 'Bills, payments, refunds, reversals and day-end reports.' },

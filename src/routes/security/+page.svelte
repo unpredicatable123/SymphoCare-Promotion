@@ -110,15 +110,22 @@
 		</div>
 		<div class="dark-copy" {@attach reveal(120)}>
 			<p>
-				Smart Files AI reads and classifies documents and suggests extracted values. It never writes
-				to a medical record on its own — every suggestion is accepted, edited or rejected by your
-				team.
+				AURA records a consultation only after the patient’s consent is confirmed. It drafts notes
+				solely from what was said, never adding diagnoses or treatments, and its audio and transcripts
+				are visible only to the recording doctor and kept out of logs.
+			</p>
+			<p>
+				Smart Files AI reads and classifies documents and suggests extracted values. Neither writes
+				to a medical record on its own: every suggestion is accepted, edited or rejected by your team.
 			</p>
 			<p>
 				Report comparisons flag values that can’t be verified instead of guessing, so the doctor
 				always knows what the AI was unsure about.
 			</p>
-			<a class="text-link light-link" href="/smart-files">How Smart Files AI works →</a>
+			<div class="ai-links">
+				<a class="text-link light-link" href="/aura">How AURA works →</a>
+				<a class="text-link light-link" href="/smart-files">How Smart Files AI works →</a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -183,6 +190,11 @@
 	}
 	.dark-copy p + p {
 		margin-top: 22px;
+	}
+	.ai-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 24px;
 	}
 	@media (width <= 900px) {
 		.pillars {

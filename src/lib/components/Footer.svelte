@@ -17,11 +17,13 @@
 			<div class="footer-brand">
 				<a class="footer-logo" href="/" aria-label="SymphoCare home"><Logo light lazy /></a>
 				<p>The connected clinic platform for front desk, doctors, laboratory, pharmacy and patients.</p>
-				<a class="footer-ai-link" href="/smart-files">Smart Files AI. Records that read themselves. <span aria-hidden="true">↗</span></a>
+				<a class="footer-ai-link" href="/aura">AURA. Look at the patient, not the keyboard. <span aria-hidden="true">↗</span></a>
 			</div>
 			<nav class="footer-links" aria-label="Footer platform navigation">
 				<h3>Explore</h3>
 				<a href="/platform">The platform</a>
+				<a href="/aura">AURA ambient listening</a>
+				<a href="/platform#queue">PACE queue management</a>
 				<a href="/smart-files">Smart Files AI</a>
 				<a href="/solutions">Solutions by care setting</a>
 				<a href="/security">Security &amp; privacy</a>
