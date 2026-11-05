@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://symphocare.com/sitemap.xml
