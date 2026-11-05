@@ -10,8 +10,8 @@
 	const lines = [
 		{ who: 'Doctor', text: 'Sollunga, enna problem?' },
 		{ who: 'Patient', text: 'Three days-aa fever irukku doctor, night-la cough jaasthi.' },
-		{ who: 'Doctor', text: 'Any breathing difficulty? Sputum varudha?' },
-		{ who: 'Patient', text: 'Konjam yellow sputum. Breathing okay.' }
+		{ who: 'Doctor', text: 'Throat pain irukka? Body pain?' },
+		{ who: 'Patient', text: 'Throat konjam valikkudhu. Body pain-um irukku.' }
 	];
 	let shown = $state(lines.length);
 	let drafted = $state(true);
@@ -44,10 +44,10 @@
 	type Field = { k: string; v: string; state: 'pending' | 'accepted' | 'editing' };
 	let fields = $state<Field[]>([
 		{ k: 'Chief complaint', v: 'Fever for 3 days; cough, worse at night.', state: 'pending' },
-		{ k: 'History', v: 'Yellowish sputum. No breathing difficulty reported.', state: 'pending' },
+		{ k: 'History', v: 'Mild sore throat and body ache.', state: 'pending' },
 		{ k: 'Examination', v: 'As stated by the doctor during the consultation.', state: 'pending' },
 		{ k: 'Diagnosis', v: 'As stated by the doctor during the consultation.', state: 'pending' },
-		{ k: 'Follow-up', v: 'Review after 5 days, or earlier if breathlessness develops.', state: 'pending' }
+		{ k: 'Follow-up', v: 'Review after 5 days, or earlier if the fever persists.', state: 'pending' }
 	]);
 	const accepted = $derived(fields.filter((f) => f.state === 'accepted').length);
 
@@ -114,7 +114,7 @@
 					<dt>Complaint</dt>
 					<dd>Fever × 3 days; night-time cough</dd>
 					<dt>History</dt>
-					<dd>Yellowish sputum, no breathlessness</dd>
+					<dd>Mild sore throat and body ache</dd>
 				</dl>
 			</div>
 		</div>
